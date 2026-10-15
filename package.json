@@ -1,0 +1,16 @@
+{
+  "name": "easy-plugin-install",
+  "productName": "Easy Plugin Install",
+  "version": "1.0.0",
+  "description": "A simple, Modrinth-styled mod & plugin downloader built with Electron.",
+  "main": "main.js",
+  "author": "Easy Plugin Install",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev"
+  },
+  "devDependencies": {
+    "electron": "^38.0.0"
+  }
+}

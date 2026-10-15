@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-mode">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Easy Plugin Install</title>
+    <link rel="icon" href="../build/icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="navbar">
+        <div class="nav-left">
+          <div class="brand">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <path
+                d="M16 2 3 9v14l13 7 13-7V9L16 2Z"
+                fill="var(--brand)"
+              />
+              <path
+                d="M16 2 3 9l13 7 13-7-13-7Z"
+                fill="#42e686"
+              />
+              <path
+                d="M16 16v14l13-7V9l-13 7Z"
+                fill="#0f8642"
+                opacity=".65"
+              />
+            </svg>
+            <span>Easy Plugin Install</span>
+          </div>
+          <nav class="nav-tabs">
+            <button class="nav-tab active" data-view="browse">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="7" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+              Browse
+            </button>
+            <button class="nav-tab" data-view="downloads">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 3v12m0 0 4-4m-4 4-4-4" />
+                <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" />
+              </svg>
+              Downloads <span class="nav-badge" id="dlBadge" hidden>0</span>
+            </button>
+            <button class="nav-tab" data-view="settings">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3" />
+                <path
+                  d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-2.9 1.2 2 2 0 1 1-4 0 1.7 1.7 0 0 0-2.9-1.2l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1A1.7 1.7 0 0 0 3 15a2 2 0 1 1 0-4 1.7 1.7 0 0 0 1.5-2.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1A1.7 1.7 0 0 0 10 3a2 2 0 1 1 4 0 1.7 1.7 0 0 0 2.9 1.5l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1A1.7 1.7 0 0 0 21 11a2 2 0 1 1 0 4h-.2a1.7 1.7 0 0 0-1.4 1Z"
+                />
+              </svg>
+              Settings
+            </button>
+          </nav>
+        </div>
+
+        <div class="nav-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Search mods, plugins, shaders, resource packs..."
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="nav-right">
+          <button class="icon-btn" id="themeToggle" title="Toggle theme"></button>
+          <div class="win-controls">
+            <button class="win-btn" id="winMin" title="Minimize" aria-label="Minimize">
+              <svg viewBox="0 0 12 12"><rect x="2" y="5.5" width="8" height="1" fill="currentColor" /></svg>
+            </button>
+            <button class="win-btn" id="winMax" title="Maximize" aria-label="Maximize">
+              <svg viewBox="0 0 12 12"><rect x="2.5" y="2.5" width="7" height="7" fill="none" stroke="currentColor" stroke-width="1" /></svg>
+            </button>
+            <button class="win-btn close" id="winClose" title="Close" aria-label="Close">
+              <svg viewBox="0 0 12 12"><path d="M3 3l6 6M9 3l-6 6" stroke="currentColor" stroke-width="1.1" /></svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div class="layout">
+        <aside class="sidebar" id="sidebar"></aside>
+        <main class="content" id="view"></main>
+      </div>
+    </div>
+
+    <div id="toasts"></div>
+
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
